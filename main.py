@@ -5,6 +5,7 @@ def usage(program_name):
     print("Usage: {} number1 operation number".format(program_name))
     print("Available operations:")
     print("\tadd")
+    print("\tsub")
     print("\tmul")
     print()
 
@@ -18,6 +19,11 @@ def main():
         if operation == "add":
             result = number1 + number2
             print("{} + {} = {}".format(number1, number2, result))
+            return
+
+        if operation == "sub":
+            result = number1 - number2
+            print("{} - {} = {}".format(number1, number2, result))
             return
 
         if operation == "mul":
