@@ -1,16 +1,26 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import sys
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+def usage(program_name):
+    print("Usage: {} number1 operation number".format(program_name))
+    print("Available operations:")
+    print("\tadd")
+    print()
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def main():
+    if len(sys.argv) == 4:
+        number1 = int(sys.argv[1])
+        operation = sys.argv[2]
+        number2 = int(sys.argv[3])
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        if operation == "add":
+            result = number1 + number2
+            print("{} + {} = {}".format(number1, number2, result))
+            return
+
+    usage(sys.argv[0])
+
+
+if __name__ == "__main__":
+    main()
